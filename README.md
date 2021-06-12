@@ -171,4 +171,14 @@ Any nonzero number is truthy, and any array containing a truthy value is truthy.
 
 ## Interpreter
 
-_To be continued_
+The reference implementation of Risky takes two inputs, and a third optional one. The first is the program, either as a string (string mode) or `Uint8Array` (binary mode). The second is the array of inputs (or a string). The third is an optional boolean value, which will force output either as a string or array of numbers (defaults to whatever form the input is).
+
+You are free to create your own implementations of Risky, or front-ends for the reference implementation. It should perform _exactly_ the same for any inputs (once parsed by the interpreter), so particular attention should be paid to the behavior of Risky's operators in certain edge cases.
+
+## Future
+
+Risky is a proof-of-concept. It is not intended to be particularly well optimized for golfing. Risky is intended to show off the possibilities with "oddfix" (determining the arity of an operator based on some numerical property of the program's length).
+
+It is highly advantageous under certain circumstances, described in detail above. This is due to the massive potential for overloading. Additional data types or an extra one or two bits per operator could easily double, quadruple, or even multiply by ten the number of effective operators, for a serious golfing language. Prefix codes could also help for this.
+
+Currently, depending on how you count, Risky manages to overload about 104 operators into a 4-bit code page (at the cost of shortness in many scenarios). It may or may not be an effective and novel direction to take golfing languages. There are, I suspect, much better ways to decide the arity of an operator, which could help to prevent the harsh symmetry requirements Risky imposes. It's our duty as code golfers to find them ;p
