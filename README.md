@@ -30,7 +30,7 @@ You'll notice that `*` and `1` have been used as both dyads and nilads in this p
 
 This system does have some disadvantages, which makes a small number of operators even more important. Due to the way Risky's dyads work, symmetry is often required. If you were to try to port the `1+_2` program from above into Risky, you would run into a problem. To add numbers, you would use `+`. However, this needs to be in the center of the program for it to be parsed correctly. On the right side you would have `-2` (negation monad and nilad `2`), but on the left side you only need `1`. In order to maintain symmetry, an extra `_` monad (identity) is required.
 
-The resulting program, `_1+-2`, is one operator longer. With small programs this isn't very significant, but under certain conditions large programs can become much larger in Risky. Specifically, Risky programs tend to be much shorter when the tree you draw for it is close to symmetrical. Look at these two (pseudocode) programs:
+The resulting program, `_1+-2`, is one operator longer. With small programs this isn't very significant, but under certain conditions large programs can become much longer. Specifically, Risky programs are optimal when the tree you draw for it is close to symmetrical. Look at these two (pseudocode) programs:
 
 ```
        +
