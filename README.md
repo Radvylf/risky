@@ -2,7 +2,7 @@
 
 Risky is a programming language designed as a proof-of-concept. Risky features a (to my knowledge) original form of what could loosely be called tacit programming.
 
-Risky's operators are overloaded both by type, and arity. It uses a 4-bit code page, so only 16 operators are available.
+Risky's operators are overloaded, both by type and arity. It uses a 4-bit code page, so only 16 operators are available.
 
 ## Basics
 
