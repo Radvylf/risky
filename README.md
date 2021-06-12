@@ -62,6 +62,33 @@ Both contain the same number of operators. In a typical tacit (including prefix 
 0   0   0   x   0   x   x   x
 ```
 
+## Format
+
+Risky programs can be formatted either as text (string mode), or raw bits (binary). The differences between these methods are important to keep in mind for certain types of programming challenges, like `[tag:radiation-hardening]`, or for scoring (where string mode uses twice as many bits per operator as binary mode).
+
+**String:**
+
+Risky's string mode uses ASCII, UTF-8, or any other encoding an interpreter will accept. All spaces, `\t` (tabs), `\r` (carriage returns), and `\n` (newlines) will be discarded. Any `;` will be the start of a comment, which is terminated by a `\n` (newline). Note that `\r` will not terminate comments.
+
+**Binary:**
+
+Risky has a 4-bit code page, consisting of 16 operators:
+
+| `x` |         | `x` |         |
+| --- | ------- | --- | ------- |
+| `0` | **`_`** | `8` | **`/`** |
+| `1` | **`?`** | `9` | **`\`** |
+| `2` | **`-`** | `a` | **`}`** |
+| `3` | **`0`** | `b` | **`+`** |
+| `4` | **`1`** | `c` | **`*`** |
+| `5` | **`2`** | `d` | **`[`** |
+| `6` | **`!`** | `e` | **`:`** |
+| `7` | **`{`** | `f` | **`]`** |
+
+In order to pad programs to a whole number of bytes, a trailing `_` should be used. Be aware that if the last character in a program with an even number of operators is `_`, it will be trimmed off. This does not happen in string mode.
+
+Note that whitespace and comments cannot be represented in binary mode.
+
 ## Operators
 
 _To be continued_
