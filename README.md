@@ -1,6 +1,6 @@
 # Risky
 
-Risky is a programming language designed as a proof-of-concept by Redwolf Programs. Risky features a (to my knowledge) original form of what could loosely be called tacit programming.
+Risky is a programming language designed as a proof-of-concept. Risky features a (to my knowledge) original form of what could loosely be called tacit programming.
 
 Risky's operators are overloaded both by type, and arity. It uses a 4-bit code page, so only 16 operators are available.
 
@@ -89,6 +89,40 @@ In order to pad programs to a whole number of bytes, a trailing `_` should be us
 
 Note that whitespace and comments cannot be represented in binary mode.
 
-## Operators
+## Nilads
+
+Risky has two data types: Integer, and Array. Arrays can contain integers or more arrays, or some of both.
+
+Input is handled by the interpreter. The reference implementation accepts an array of inputs, which can be integers, arrays, characters (converted to integers), or strings (converted to arrays of characters), and supports string output.
+
+- **Numbers:** `-` is `-1`, and `0` to `+` are `0` to `8`. `*` is `10`, `[` is `64`, and `:` is `100`
+- **Array:** `]` is `[]`
+- **Input:** `_` is an array of all inputs, and `?` will take the next input (wraps around when all input has been read)
+
+## Monads
+
+Monads other than `_` (identity) are overloaded over numbers and arrays.
+
+|         | Number | Array |
+| ------- | - | - |
+| **`?`** | `[x]` | `x` |
+| **`-`** | Negate | Reverse |
+| **`0`** | Range | Transpose |
+| **`1`** | Sign | Sort |
+| **`2`** | Double | Unique |
+| **`!`** | Factorial | Count |
+| **`{`** | Log 2 | Slices |
+| **`/`** | Factors | Combinations |
+| **`\`** | Prime factors | Permutations |
+| **`}`** | Square root | Orderings |
+| **`+`** | `2 ** x` | Sum |
+| **`*`** | `10 ** x` | Product |
+| **`[`** | Absolute value | Minimum |
+| **`:`** | Is not `0` | Flat |
+| **`]`** | Fibonacci | Optimize
+
+Optimize is the only one there that might need a bit of explaining. It takes an array of arrays, finds the one with the minimum first item, and returns the rest of it. For example, `[[1, 0], [0, 4, 6], [2]]` would result in `[4, 6]`.
+
+## Dyads
 
 _To be continued_
