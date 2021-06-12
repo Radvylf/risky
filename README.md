@@ -95,9 +95,24 @@ Risky has two data types: Integer, and Array. Arrays can contain integers or mor
 
 Input is handled by the interpreter. The reference implementation accepts an array of inputs, which can be integers, arrays, characters (converted to integers), or strings (converted to arrays of characters), and supports string output.
 
-- **Numbers:** `-` is `-1`, and `0` to `+` are `0` to `8`. `*` is `10`, `[` is `64`, and `:` is `100`
-- **Array:** `]` is `[]`
-- **Input:** `_` is an array of all inputs, and `?` will take the next input (wraps around when all input has been read)
+|         | Nilad |
+| ------- | - |
+| **`_`** | Inputs |
+| **`?`** | Next input |
+| **`-`** | `-1` |
+| **`0`** | `0` |
+| **`1`** | `1` |
+| **`2`** | `2` |
+| **`!`** | `3` |
+| **`{`** | `4` |
+| **`/`** | `5` |
+| **`\`** | `6` |
+| **`}`** | `7` |
+| **`+`** | `8` |
+| **`*`** | `10` |
+| **`[`** | `64` |
+| **`:`** | `100` |
+| **`]`** | `[]` |
 
 ## Monads
 
