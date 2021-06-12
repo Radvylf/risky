@@ -140,4 +140,35 @@ Optimize is the only one there that might need a bit of explaining. It takes an 
 
 ## Dyads
 
+Risky's dyads are divided into 13 normal dyads, and 3 dynamics. The normal dyads are overloaded over two numbers, array and number, number and array, and two arrays.
+
+|         | Numbers | Array and Number | Number and Array | Arrays |
+| ------- | - | - | - | - |
+| **`+`** | Add | Copy final | Rotate right | Concat |
+| **`-`** | Subtract | Remove | Rotate left | Difference |
+| **`*`** | Multiply | Repeat | Join | Join |
+| **`/`** | Divide | Group | Split | Split |
+| **`\`** | Modulo | Partition | Find | Find |
+| **`2`** | Power | Append | Prepend | Append |
+| **`{`** | Compare | `x`th item | Slice first | Map to `x`th item |
+| **`1`** | Distance | From sig. figs (with exponent) | Farthest | Map pairs |
+| **`:`** | Equals | All equal | Combinations | Equals |
+| **`!`** | Pair | None equal | Permutations | Cartesian product |
+| **`}`** | Base convert | Base convert | Base convert | Base convert |
+| **`[`** | GCD | Pad start | Slice from | Intersection |
+| **`]`** | LCM | Pad end | Slice final | Union |
+
+Risky has three dynamics, which essentially treat their second argument as a code block. They prepend additional inputs.
+
+- **`_` (NUMBER):** Pass `x` as an input, run once
+- **`_` (ARRAY):** Map over all items in `x`, passed as inputs
+- **`?` (NUMBER):** Count up from `0`, passing the counter as input, and find the `x`th counter value returning a truthy value
+- **`?` (ARRAY):** Filter
+- **`0` (NUMBER):** While loop, with `x` passed as input, then the return value of the previous iteration for subsequent ones
+- **`0` (ARRAY):** Reduce, with accumulator starting as first item in array, and passed as first input (items are second input)
+
+Any nonzero number is truthy, and any array containing a truthy value is truthy.
+
+## Interpreter
+
 _To be continued_
