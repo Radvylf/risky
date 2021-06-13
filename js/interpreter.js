@@ -1082,5 +1082,5 @@ window["risky"] = {
 
         return !stringify ? interpret(parse(program), input) : format_string(interpret(parse(program), input));
     },
-    compress: (program) => [...program.split("\n").map(p => p.split(";")[0]).join("")].filter(c => ![" ", "\t", "\r", "\n"].includes(c)).join("")
+    compress: (program) => [...program.split("\n").map(p => p.split(";")[0]).join("")].filter(c => ["_", "?", "-", "0", "1", "2", "!", "{", "/", "\\", "}", "+", "*", "[", ":", "]"].includes(c)).join("")
 };
