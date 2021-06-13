@@ -43,6 +43,18 @@ window.onload = function() {
     };
     
     layout.run.onclick = () => {
+        // Update CGCC post
+        
+        var compiled = interpreter.compress(layout.program.value);
+        
+        layout.cgcc_post.value = (
+            "# [Risky](https://github.com/RedwolfPrograms/risky), " + Math.ceil(compiled.length / 2) + " bytes\n\n" +
+            "    " + compiled + "\n\n" +
+            "[Try it online!](https://redwolfprograms.github.io/risky?p=" + save() + ")"
+        );
+        
+        layout.cgcc_post.parentNode.dataset.replicated = layout.cgcc_post.value;
+        
         // Input
         
         layout.invalid_program.style.display = "";
@@ -103,16 +115,6 @@ window.onload = function() {
         layout.result.value = layout.stringify.selectedIndex == 0 ? format(result) : result;
         
         layout.result.parentNode.dataset.replicated = layout.result.value;
-        
-        var compiled = interpreter.compress(layout.program.value);
-        
-        layout.cgcc_post.value = (
-            "# [Risky](https://github.com/RedwolfPrograms/risky), " + Math.ceil(compiled.length / 2) + " bytes\n\n" +
-            "    " + compiled + "\n\n" +
-            "[Try it online!](https://redwolfprograms.github.io/risky?p=" + save() + ")"
-        );
-        
-        layout.cgcc_post.parentNode.dataset.replicated = layout.cgcc_post.value;
     };
     
     restore();
