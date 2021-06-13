@@ -24,7 +24,7 @@ With Risky, things work a bit different. Parsing works like this:
 
 For case 2, the remaining operators are treated as a program and given as an argument, and for case 3 both remaining halves are given as arguments.
 
-Take the Risky program `*/2*1--`. This is 7 operators long, so `*` is parsed as a dyad. This splits the program into two arguments to multiply: `*/2`, and `1--`. Both are still odd, so `*/2` becomes `/` with `*` and `2` as arguments, and `11-` becomes `1` with `1` and `-` as arguments.
+Take the Risky program `*/2*11-`. This is 7 operators long, so `*` is parsed as a dyad. This splits the program into two arguments to multiply: `*/2`, and `1--`. Both are still odd, so `*/2` becomes `/` with `*` and `2` as arguments, and `11-` becomes `1` with `1` and `-` as arguments.
 
 You'll notice that `*` and `1` have been used as both dyads and nilads in this program. This is the main advantage Risky has for golfing; nilads can be overloaded onto the same operators as monads and dyads, reducing the number of operators required by a significant amount. This is how Risky can get away with having just 16 operators.
 
