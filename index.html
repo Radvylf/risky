@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Risky: Interpreter</title>
+        
+        <meta name="author" content="Ryan Tosh (Redwolf Programs)">
+        <meta name="description" content="Interpreter for Risky">
+        <meta name="keywords" content="Risky,Interpreter,Risky Interpreter,Online Interpreter,RedwolfPrograms,Redwolf Programs,Ryan Tosh">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="style/fonts.css"/>
+        <link rel="stylesheet" href="style/main.css"/>
+        
+        <script src="js/interpreter.js"></script>
+        <script src="js/main2.js"></script>
+    </head>
+    <body>
+        <b>Program:</b>
+        
+        <div class="grow_wrap">
+            <textarea id="program" rows="1" cols="100" oninput="this.parentNode.dataset.replicated = this.value"></textarea>
+        </div>
+
+        <i id="invalid_program" class="invalid"></i>
+
+        <b>Input:</b>
+
+        <div class="grow_wrap">
+            <textarea id="input" rows="1" cols="100" placeholder="[]" oninput="this.parentNode.dataset.replicated = this.value"></textarea>
+        </div>
+
+        <i id="invalid_input" class="invalid"></i>
+
+        <button id="run">Run</button>
+        
+        <hr/>
+        
+        <b>Result:</b>
+        
+        <select id="stringify">
+            <option selected>Default</option>
+            <option>String</option>
+        </select>
+        
+        <div class="grow_wrap">
+            <textarea id="result" rows="1" cols="100" onInput="this.parentNode.dataset.replicatedValue = this.value" readonly></textarea>
+        </div>
+        
+        <hr/>
+        
+        <b>CGCC Post:</b>
+        
+        <div class="grow_wrap">
+            <textarea id="cgcc_post" rows="1" cols="100" onInput="this.parentNode.dataset.replicatedValue = this.value" readonly></textarea>
+        </div>
+    </body>
+</html>
