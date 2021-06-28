@@ -85,7 +85,7 @@ Risky has a 4-bit code page, consisting of 16 operators:
 | `6` | **`!`** | `e` | **`:`** |
 | `7` | **`{`** | `f` | **`]`** |
 
-In order to pad programs to a whole number of bytes, a trailing `_` should be used. Be aware that if the last character in a program with an even number of operators is `_`, it will be trimmed off. This does not happen in string mode.
+In order to pad programs to a whole number of bytes, a `_` should be inserted at the start. This will be parsed as the identity function, and will not impact the program.
 
 Note that whitespace and comments cannot be represented in binary mode.
 
