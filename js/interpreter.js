@@ -17,9 +17,6 @@ window["risky"] = {
             if (program instanceof Uint8Array) {
                 string = [...program].map(n => [n / 16 | 0, n % 16]).flat().map(c => ["_", "?", "-", "0", "1", "2", "!", "{", "/", "\\", "}", "+", "*", "[", ":", "]"][c]);
 
-                if (string[string.length - 1] == "_")
-                    return string.slice(0, -1);
-
                 return string;
             }
 
