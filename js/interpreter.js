@@ -797,7 +797,7 @@ window["risky"] = {
                     return overload(
                         interpret(data, inputs),
                         (number) => number == 0n ? 0n : number >= 1n ? 1n : -1n,
-                        (array) => array.sort((a, b) => Number(compare(a, b)))
+                        (array) => [...array].sort((a, b) => Number(compare(a, b)))
                     );
                 case "2":
                     return overload(
